@@ -5,29 +5,42 @@ build-type: Simple
 
 library
   hs-source-dirs: src
-  build-depends: base
-               , common
-               , obelisk-frontend
-               , obelisk-route
-               , reflex-dom
-               , obelisk-executable-config-lookup
-               , obelisk-generated-static
-               , text
+  ghc-options:
+    -Wall
+    -Wno-name-shadowing
+    -Wno-unused-do-bind
+    -F -pgmF=record-dot-preprocessor
+  
+  default-extensions:
+    DataKinds
+    OverloadedStrings
+    LambdaCase
+
   exposed-modules:
     Frontend
-  ghc-options: -Wall
+  
+  build-depends:
+      base
+    , common
+    , obelisk-frontend
+    , obelisk-route
+    , reflex-dom
+    , obelisk-executable-config-lookup
+    , obelisk-generated-static
+    , text
+    , record-hasfield
 
 executable frontend
   main-is: main.hs
   hs-source-dirs: src-bin
-  build-depends: base
-               , common
-               , obelisk-frontend
-               , obelisk-route
-               , reflex-dom
-               , obelisk-generated-static
-               , frontend
-  --TODO: Make these ghc-options optional
+  build-depends:
+      base
+    , common
+    , obelisk-frontend
+    , obelisk-route
+    , reflex-dom
+    , obelisk-generated-static
+    , frontend
   ghc-options: -threaded
   if os(darwin)
      ghc-options: -dynamic

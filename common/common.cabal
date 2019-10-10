@@ -5,13 +5,24 @@ build-type: Simple
 
 library
   hs-source-dirs: src
-  build-depends: base
-               , obelisk-route
-               , mtl
-               , text
+  ghc-options:
+    -Wall
+    -Wno-name-shadowing
+    -Wno-unused-do-bind
+    -F -pgmF=record-dot-preprocessor
+
   default-extensions:
     TypeFamilies
     PolyKinds
+  
   exposed-modules:
     Common.Api
     Common.Route
+
+  build-depends:
+      base
+    , obelisk-route
+    , mtl
+    , text
+    , record-hasfield
+  
