@@ -16,6 +16,7 @@ library
 
   exposed-modules:
     Backend
+    API
 
   build-depends:
       base
@@ -24,7 +25,7 @@ library
     , obelisk-backend
     , obelisk-route
     , record-hasfield
-  
+
 executable backend
   main-is: main.hs
   hs-source-dirs: src-bin

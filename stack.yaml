@@ -1,0 +1,10 @@
+resolver: lts-14.8
+
+packages:
+- ./api
+- ./common
+
+nix:
+    packages:
+    - obelisk-route
+    - libz

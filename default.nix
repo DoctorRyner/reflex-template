@@ -25,4 +25,5 @@ project ./. ({ pkgs, ... }: {
   {
     record-hasfield = self.callCabal2nix "record-hasfield" record-hasfield {};
   };
+
 })

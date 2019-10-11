@@ -40,6 +40,7 @@ executable frontend
     , obelisk-route
     , reflex-dom
     , obelisk-generated-static
+    , obelisk-run
     , frontend
   ghc-options: -threaded
   if os(darwin)
