@@ -37,10 +37,24 @@ project ./. ({ pkgs, ... }: {
       rev = "de1f47b2b40e960b7bc3acba754f66dd19705921";
       sha256 = "1ywxwnhixic63n7c5wgky7dws33bb5949nqfh9miaim6l5rz66v4";
     };
+    clay = pkgs.fetchFromGitHub {
+      owner = "sebastiaanvisser";
+      repo = "clay";
+      rev = "2795065ecf671b91382aa2bfff18d826037798b5";
+      sha256 = "1hqzm8vqvxj0ik6l52mr4vhn7jia4i4ynky4m6219wf6z608rzrj";
+    };
+    hspec = pkgs.fetchFromGitHub {
+      owner = "hspec";
+      repo = "hspec";
+      rev = "37b7bedc9d35543ae7ecbb07ade06cb6b26b54a0";
+      sha256 = "0xkdgl1hf85j7isz1xi60zqv3vg7apm2psvrkx7k8y5v55ivp2iv";
+    };
   in
   {
     record-hasfield = self.callCabal2nix "record-hasfield" record-hasfield {};
     record-dot-preprocessor = self.callCabal2nix "record-dot-preprocessor" record-dot-preprocessor {};
+    clay = self.callCabal2nix "clay" clay {};
+    hspec = self.callCabal2nix "hspec" hspec {};
     api = super.api.overrideAttrs(oa: { buildInputs = oa.buildInputs ++ [ pkgs.lzma ]; });
   };
 })
