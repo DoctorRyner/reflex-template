@@ -1,4 +1,4 @@
-name: common
+name: api
 version: 0.1
 cabal-version: >= 1.2
 build-type: Simple
@@ -9,20 +9,17 @@ library
     -Wall
     -Wno-name-shadowing
     -Wno-unused-do-bind
+    -F -pgmF=record-dot-preprocessor
 
   default-extensions:
     TypeFamilies
     PolyKinds
   
   exposed-modules:
-    Common.Api
-    Common.Route
+    API
 
   build-depends:
       base
-    , obelisk-route
-    , mtl
     , text
     , record-hasfield
-    , reflex-dom
   

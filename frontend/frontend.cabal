@@ -9,15 +9,20 @@ library
     -Wall
     -Wno-name-shadowing
     -Wno-unused-do-bind
+    -- -Wno-redundant-constraints
     -F -pgmF=record-dot-preprocessor
   
   default-extensions:
     DataKinds
     OverloadedStrings
     LambdaCase
+    FlexibleContexts
+    RankNTypes
 
   exposed-modules:
     Frontend
+  other-modules:
+    Utils
   
   build-depends:
       base
@@ -28,6 +33,7 @@ library
     , obelisk-executable-config-lookup
     , obelisk-generated-static
     , text
+    , lens
     , record-hasfield
 
 executable frontend
@@ -35,7 +41,6 @@ executable frontend
   hs-source-dirs: src-bin
   build-depends:
       base
-    , common
     , obelisk-frontend
     , obelisk-route
     , reflex-dom

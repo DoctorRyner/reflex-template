@@ -16,12 +16,12 @@ library
 
   exposed-modules:
     Backend
-    API
 
   build-depends:
       base
     , common
     , frontend
+    , api
     , obelisk-backend
     , obelisk-route
     , record-hasfield

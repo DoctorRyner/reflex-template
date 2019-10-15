@@ -9,7 +9,6 @@ library
     -Wall
     -Wno-name-shadowing
     -Wno-unused-do-bind
-    -F -pgmF=record-dot-preprocessor
 
   default-extensions:
     TypeFamilies
