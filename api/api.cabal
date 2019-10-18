@@ -9,10 +9,19 @@ library
     -Wall
     -Wno-name-shadowing
     -Wno-unused-do-bind
+    -fplugin=RecordDotPreprocessor
 
   default-extensions:
     TypeFamilies
     PolyKinds
+    DuplicateRecordFields
+    TypeApplications
+    FlexibleContexts
+    DataKinds
+    MultiParamTypeClasses
+    TypeSynonymInstances
+    FlexibleInstances
+    TypeOperators
   
   exposed-modules:
     API
@@ -23,6 +32,7 @@ library
     , obelisk-route
     , mtl
     , text
+    , record-dot-preprocessor
     , record-hasfield
     , servant
     , servant-server

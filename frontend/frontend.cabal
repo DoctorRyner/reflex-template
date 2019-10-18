@@ -18,6 +18,7 @@ library
     LambdaCase
     FlexibleContexts
     RankNTypes
+    RecursiveDo
 
   exposed-modules:
     Frontend

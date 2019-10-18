@@ -1,15 +1,15 @@
-{-# LANGUAGE ConstraintKinds  #-}
-{-# LANGUAGE FlexibleContexts #-}
-{-# LANGUAGE RankNTypes       #-}
-
-module Frontend.Utils where
+module Frontend.Utils
+    ( module Frontend.Utils
+    , module Reflex.Dom.Core
+    ) where
 
 import           Common.Route
 import           Control.Monad.Fix
+import           Data.Text              as T
 import           Obelisk.Route.Frontend
 import           Reflex
 import           Reflex.Dom
-import           Data.Text as T
+import           Reflex.Dom.Core
 
 type Html t m a = DomBuilder t m => m a
 
