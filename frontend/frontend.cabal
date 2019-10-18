@@ -10,21 +10,30 @@ library
     -Wno-name-shadowing
     -Wno-unused-do-bind
     -- -Wno-redundant-constraints
-    -F -pgmF=record-dot-preprocessor
   
   default-extensions:
+    TypeFamilies
     DataKinds
     OverloadedStrings
     LambdaCase
     FlexibleContexts
     RankNTypes
     RecursiveDo
+    DuplicateRecordFields
+    TypeApplications
+    DataKinds
+    MultiParamTypeClasses
+    TypeSynonymInstances
+    FlexibleInstances
 
   exposed-modules:
     Frontend
 
   other-modules:
     Frontend.Utils
+    Route.Root
+    Route.Test
+    Route.NotFound
   
   build-depends:
       base
@@ -37,6 +46,8 @@ library
     , text
     , lens
     , record-hasfield
+    , record-dot-preprocessor
+    , reflex
     , clay
 
 executable frontend

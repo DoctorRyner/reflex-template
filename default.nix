@@ -13,6 +13,9 @@ project ./. ({ pkgs, ... }: {
 
   packages = {
     api = ./api;
+    frontend = ./frontend;
+    backend = ./backend;
+    common = ./common;
   };
 
   overrides = self: super: let

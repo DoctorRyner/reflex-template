@@ -29,7 +29,6 @@ library
   build-depends:
       base
     , common
-    , obelisk-route
     , mtl
     , text
     , record-dot-preprocessor
