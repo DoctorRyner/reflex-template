@@ -36,4 +36,5 @@ library
     , text
     , record-hasfield
     , record-dot-preprocessor
+    , clay
   
